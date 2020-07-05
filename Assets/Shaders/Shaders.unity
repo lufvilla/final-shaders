@@ -39192,6 +39192,7 @@ GameObject:
   - component: {fileID: 1126568306}
   - component: {fileID: 1126568305}
   - component: {fileID: 1126568310}
+  - component: {fileID: 1126568311}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -39347,6 +39348,46 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 1
       enableBigTilePrepass: 1
       isFptlEnabled: 1
+--- !u!114 &1126568311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126568304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a636f62116c0a40bbfefdf876d4608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 0
 --- !u!1001 &1128425550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62927,41 +62968,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1780380631}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1780445294
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1987185936}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -92.155174
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.20773125
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.531431
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
-      propertyPath: m_RootOrder
-      value: 51
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f, type: 3}
---- !u!4 &1780445295 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 0ccc03e88bfc20c46b4f5ea02f4da61f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1780445294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1783631290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70614,7 +70620,6 @@ Transform:
   - {fileID: 333695408}
   - {fileID: 2138383616}
   - {fileID: 1055785044}
-  - {fileID: 1780445295}
   - {fileID: 825993255}
   - {fileID: 1947646345}
   - {fileID: 1407248551}
