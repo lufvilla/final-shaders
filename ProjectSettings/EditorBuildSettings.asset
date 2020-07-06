@@ -7,5 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Shaders/Shaders.unity
-    guid: e69393d271824e4498464707d18410a6
+    guid: 50ceb72e420eb6a4784ed71b3bc6c54c
   m_configObjects: {}
