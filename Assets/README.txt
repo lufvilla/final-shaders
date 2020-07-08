@@ -10,7 +10,7 @@ Opacos:
 -
 
 Transparentes:
-- 
+- Escudo para un auto
 - 
 
 
