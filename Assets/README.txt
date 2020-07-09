@@ -7,10 +7,10 @@ Consigna 2 shaders de cada tipo:
 
 Opacos:
 - Viento en los arboles (Done)
--
+- Cambio de textura con click en las calles
 
 Transparentes:
-- Escudo para un auto
+- Escudo para un auto (Done)
 - 
 
 
@@ -19,8 +19,7 @@ Unlit:
 - Fuego "toon" (Done)
 
 PostProcessing:
-- Efecto camara con gotas
-- Efecto de fuego en la camara al acercarse al fuego
+- Hand Draw Effect
 - Efector pantalla CRT
 
 Replacement:
