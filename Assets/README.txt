@@ -19,7 +19,7 @@ Unlit:
 
 PostProcessing:
 - Hand Draw Effect
-- Efector pantalla CRT
+- Efector pantalla CRT (Done)
 
 Replacement:
 - Ver auto a traves de un edificio
