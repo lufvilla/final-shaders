@@ -7,12 +7,11 @@ Consigna 2 shaders de cada tipo:
 
 Opacos:
 - Viento en los arboles (Done)
-- Cambio de textura con click en las calles
+- Highlight en la calle (Done)
 
 Transparentes:
 - Escudo para un auto (Done)
-- 
-
+- Autobuses de vidrio (Done)
 
 Unlit:
 - Agua toon para la base de la escena (Done)
