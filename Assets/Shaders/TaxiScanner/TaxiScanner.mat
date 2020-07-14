@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SheiderGRaphj
-  m_Shader: {fileID: -6465566751694194690, guid: b02550e62b058e44eac201683d7418bf,
+  m_Name: TaxiScanner
+  m_Shader: {fileID: -6465566751694194690, guid: 122a48d4448cc2f439c3095e0b8e56a5,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -23,6 +23,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_89139A14: 0.3
+    - Vector1_780F53DD: 2
+    - Vector1_90BDC246: 3
+    - Vector1_EA9EE23B: 0.845
     m_Colors:
-    - Color_F4D902C6: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}
+    - Color_7E91467D: {r: 0.8819739, g: 0.990566, b: 0.2009167, a: 0}

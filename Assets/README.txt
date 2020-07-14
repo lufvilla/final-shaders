@@ -22,5 +22,5 @@ PostProcessing:
 - Efector pantalla CRT (Done)
 
 Replacement:
-- Ver auto a traves de un edificio
-- Ver todos los veiculos
+- Trash finder (Done)
+- Taxi scanner (Done)
