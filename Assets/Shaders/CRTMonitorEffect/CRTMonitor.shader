@@ -1,4 +1,4 @@
-﻿Shader "Hidden/Shader/HeatEffect"
+﻿Shader "Hidden/Shader/CRTMonitor"
 {
     HLSLINCLUDE
 
@@ -33,26 +33,61 @@
         output.texcoord = GetFullScreenTriangleTexCoord(input.vertexID);
         return output;
     }
+    
+    float2 PixelateUvNode(float2 uv, float pixelsX, float pixelsY)
+    {
+        float2 newUv = uv;
+        newUv.x *= pixelsX;
+        newUv.y *= pixelsY;
+        
+        newUv.x = round(newUv.x);
+        newUv.y = round(newUv.y);
+        
+        newUv.x /= pixelsY;
+        newUv.y /= pixelsX;
+        
+        return newUv;
+    }
+    
+    float2 CurveUv(float2 uv, float curve)
+    {
+        float2 newUv = uv;
+        
+        newUv = (newUv - 0.5) * 2;
+        
+        newUv.x *= curve + 1.0 + pow(abs(newUv.y) / 4.0, 2);
+        newUv.y *= curve + 1.0 + pow(abs(newUv.x) / 3.5, 2);
+        
+        newUv /= curve + 1.2;
+        
+        newUv = (newUv / 2.0) + 0.5;
+        
+        return newUv;
+    }
 
     // List of properties to control your post process effect
     float _Intensity;
-    sampler2D _NoiseTex;
-    float _SpeedX;
-    float _SpeedY;
+    float _PixelQuantity;
+    float _Curve;
     TEXTURE2D_X(_InputTexture);
 
     float4 CustomPostProcess(Varyings input) : SV_Target
     {
         UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
         
-        float2 panner = float2(input.texcoord.x + _Time.x * _SpeedX, input.texcoord.y + _Time.x * _SpeedY);
+        float2 currentUv = input.texcoord;
+            
+        currentUv = CurveUv(currentUv, _Curve);
+        currentUv = PixelateUvNode(currentUv, _PixelQuantity, _PixelQuantity);
+        
+        uint2 crtPosition = currentUv * _ScreenSize.xy;
+        float3 crtColor = LOAD_TEXTURE2D_X(_InputTexture, crtPosition).xyz;
 
-        float2 disp = tex2D(_NoiseTex, panner).xy;
-        disp = ((disp * 1.5) - 1) * _Intensity;
-
-        uint2 positionSS = disp * _ScreenSize.xy;
+        uint2 positionSS = input.texcoord * _ScreenSize.xy;
         float3 outColor = LOAD_TEXTURE2D_X(_InputTexture, positionSS).xyz;
-        return float4(outColor, 1);
+
+        //return float4(outColor, 1);
+        return float4(lerp(outColor, crtColor, _Intensity), 1);
     }
 
     ENDHLSL
@@ -61,7 +96,7 @@
     {
         Pass
         {
-            Name "HeatEffect"
+            Name "CRTMonitor"
 
             ZWrite Off
             ZTest Always

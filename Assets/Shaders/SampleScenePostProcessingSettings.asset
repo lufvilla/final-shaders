@@ -1,6 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3864719129537514354
+--- !u!114 &-8655042919870385283
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5dc14ad212b27f43b83ca107d583610, type: 3}
+  m_Name: CRTMonitor
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  pixelQuantity:
+    m_OverrideState: 1
+    m_Value: 200
+    min: 1
+    max: 4096
+  curve:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+--- !u!114 &-7436688035966752480
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5dc14ad212b27f43b83ca107d583610, type: 3}
+  m_Name: CRTMonitor
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  pixelQuantity:
+    m_OverrideState: 0
+    m_Value: 256
+    min: 1
+    max: 4096
+  curve:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+--- !u!114 &-3827019807758762763
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,13 +71,20 @@ MonoBehaviour:
   m_Name: CRTMonitorEffect
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   m_AdvancedMode: 0
+  m_IsInitialized: 0
   pixelQuantity:
     m_OverrideState: 1
-    m_Value: 252.64
+    m_Value: 1
+    min: 1
+    max: 4096
   curve:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  m_Material: {fileID: 0}
 --- !u!114 &-2109818796249167647
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -32,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 0
@@ -67,8 +132,8 @@ MonoBehaviour:
   - {fileID: 6640133647794636954}
   - {fileID: 396278178000043239}
   - {fileID: -2109818796249167647}
-  - {fileID: -3864719129537514354}
-  - {fileID: 5409134250835817908}
+  - {fileID: -8655042919870385283}
+  - {fileID: 5349759786671305644}
 --- !u!114 &396278178000043239
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -81,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51a78e223a2e504bb88a059b55229ea, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
@@ -93,7 +158,7 @@ MonoBehaviour:
     m_Value: 0
     min: -100
     max: 100
---- !u!114 &5409134250835817908
+--- !u!114 &5349759786671305644
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,20 +170,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc95757c8a45c554ba56de787ef085d3, type: 3}
   m_Name: HeatEffect
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.152
+    m_Value: 1
+    min: 0
+    max: 1
   noise:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 10b6f53a218082a42b6bf70636837800, type: 3}
+    m_Value: {fileID: 2800000, guid: 6fa0ac1ccd1caa945a4197b4dd83b119, type: 3}
   speedX:
     m_OverrideState: 1
-    m_Value: 123
+    m_Value: 0
+    min: -10
+    max: 10
   speedY:
     m_OverrideState: 1
-    m_Value: 123
+    m_Value: 0
+    min: -10
+    max: 10
 --- !u!114 &6640133647794636954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -131,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
   m_Name: Exposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
@@ -203,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   mode:
     m_OverrideState: 0
