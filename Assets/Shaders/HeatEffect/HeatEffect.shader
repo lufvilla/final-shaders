@@ -42,15 +42,13 @@
     TEXTURE2D_X(_InputTexture);
 
     float4 CustomPostProcess(Varyings input) : SV_Target
-    {
+    {        
         UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-        
+
         float2 panner = float2(input.texcoord.x + _Time.x * _SpeedX, input.texcoord.y + _Time.x * _SpeedY);
-
-        float2 disp = tex2D(_NoiseTex, panner).xy;
-        disp = ((disp * 1.5) - 1) * _Intensity;
-
-        uint2 positionSS = disp * _ScreenSize.xy;
+        float2 dispMap = tex2D(_NoiseTex, panner).rg * (_Intensity * 10);
+    
+        uint2 positionSS = input.texcoord * _ScreenSize.xy + ((dispMap * 1.5) - 1);
         float3 outColor = LOAD_TEXTURE2D_X(_InputTexture, positionSS).xyz;
         return float4(outColor, 1);
     }
